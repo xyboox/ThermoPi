@@ -1,0 +1,28 @@
+<ion-view>
+	<ion-content class="padding">
+
+		<!-- CURRENT TEMPERATURE -->
+		<div class="temperature">
+			<div class="temp">{{mainTemp}}</div>
+			<div class="side-temp">{{sideTemp}}</div>
+			<div class="celsius">°</div>
+		</div>
+
+		<!-- TEMPERATURE CONTROL -->
+		<div class="controls-container">
+			<button class="button button-clear" ng-click="increaseDesired()"><i class="icon ion-chevron-up"></i></button>
+			<div class="desired-temperature">{{desiredTemperature}}</div>
+			<div class="desired-sub-unit-temperature">.{{desiredSubUnitTemperature}}</div>
+			<button class="button button-clear btn-down" ng-click="decreaseDesired()"><i class="icon ion-chevron-down"></i></button>
+		</div>
+
+		<!-- HEATER STATUS -->
+		<div class="flame slide-in-both-ways2" ng-if="isHeating">
+			<i class="icon ion-flame "></i>
+		</div>
+		<div class="flame2 slide-in-both-ways" ng-if="isHeating">
+			<i class="icon ion-flame "></i>
+		</div>
+
+	</ion-content>
+</ion-view>
