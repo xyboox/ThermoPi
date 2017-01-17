@@ -1,0 +1,40 @@
+{
+  "name": "thermopi",
+  "version": "1.0.0",
+  "description": "API for ThermoPi mobile app",
+  "main": "thermopi.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xyboox/ThermoPi.git"
+  },
+  "keywords": [
+    "thermostat",
+    "raspberry",
+    "pi",
+    "nodejs"
+  ],
+  "author": "Ciprian C. Dragoste",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xyboox/ThermoPi/issues"
+  },
+  "homepage": "https://github.com/xyboox/ThermoPi#readme",
+  "devDependencies": {
+    "pmx": "^1.0.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "colors": "^1.1.2",
+    "connect-multiparty": "^2.0.0",
+    "express": "^4.14.0",
+    "firebase": "^3.6.5",
+    "morgan": "^1.7.0",
+    "node-gcm": "^0.14.4",
+    "schema-inspector": "^1.6.8",
+    "socket.io": "^1.7.2",
+    "tracer": "^0.8.7"
+  }
+}
