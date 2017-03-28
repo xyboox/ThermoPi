@@ -384,10 +384,33 @@
 	"buffers":
 	[
 		{
-			"contents": "<ion-view>\n\t<div class=\"dash-content\">\n\n\t\t<!-- CURRENT TEMPERATURE -->\n\t\t<div class=\"temperature-overlay fade\" ng-if=\"!mainTemp\">\n\t\t\t<div class=\"temp\">please wait...</div>\n\t\t</div>\n\t\t<div class=\"temperature fade\" ng-if=\"mainTemp\">\n\t\t\t<div class=\"home-holder\">\n\t\t\t\t<i class=\"icon ion-ios-home-outline\"></i>\n\t\t\t</div>\n\t\t\t<div class=\"temp\">\n\t\t\t\t{{mainTemp}}<span class=\"celsius\">°</span>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<!-- TEMPERATURE CONTROL -->\n\t\t<div class=\"controls-container\">\n\t\t\t<rzslider\n\t\t\t    rz-slider-model=\"slider.value\"\n\t\t\t    rz-slider-options=\"slider.options\">\n\t\t\t</rzslider>\n\t\t</div>\n\n\t\t<!-- TIMED RANGE -->\n\t\t<div class=\"timer-range\">\n\t\t\t<div class=\"scale\">\n\t\t\t\t<ul>\n\t\t\t\t\t<li ng-repeat=\"item in scale\">{{item}}</li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t\t<div class=\"range positive\">\n\t\t\t\t<input type=\"range\" min=\"0\" max=\"60\" step=\"5\" ng-model=\"timer\" ng-change=\"runTimer(timer)\">\n\t\t\t</div>\n\t\t\t<div class=\"timer\" ng-if=\"timeLeft\">{{timeLeft}}</div>\n\t\t</div>\n\n\t\t<!-- HEATER STATUS -->\n\t\t<div class=\"flame slide-in-both-ways\" ng-if=\"isHeating\">\n\t\t\t<i class=\"icon ion-flame \"></i>\n\t\t</div>\n\n\t</div>\n</ion-view>",
-			"file": "www/templates/tab-dash.html",
-			"file_size": 1097,
-			"file_write_time": 131287290840000000,
+			"file": "APP/www/index.html",
+			"settings":
+			{
+				"buffer_size": 1827,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "APP/www/less/style.less",
+			"settings":
+			{
+				"buffer_size": 7863,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "APP/www/css/weather-icons.css",
+			"settings":
+			{
+				"buffer_size": 30769,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "APP/www/templates/tab-dash.html",
 			"settings":
 			{
 				"buffer_size": 1096,
@@ -396,49 +419,43 @@
 			}
 		},
 		{
-			"contents": "@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');\n\n@import url('https://fonts.googleapis.com/css?family=Days+One');\n\n@import url('weather-icons.css');\n@import url('slidingTabs.css');\n@import \"range.less\";\n@import \"vertical-range.less\";\n\n\n\n\n/*COLORS - START*/\n@text-color: #DDD;\n@weather-icon:  #66BFFF;\n@bordeaux-gradient: linear-gradient(45deg, #31171e 0%,#aa4636 100%);\n/*COLORS - END*/\n\n\n\n\n\n\nhtml, body {\n\tfont-family: 'Open Sans Condensed', sans-serif !important;\n\tbackground: @bordeaux-gradient;\n\tcolor: @text-color !important;\n}\n\n.pane, .tabs-striped .tabs, ion-header-bar {\n\tbackground-color: transparent !important;\n}\n\nion-nav-view, ion-tabs {\n\tbackground: @bordeaux-gradient;\t\n}\n\n\n.bar.bar-stable .title {\n\tcolor: @text-color !important;\n}\n\nion-tabs.tabs-color-active-positive .tab-item {\n\tcolor: @text-color !important;\n}\n\n.ping {\n\ttext-align: center;\n    padding-bottom: 1rem;\n    padding-top: 1rem;\n    font-weight: 700;\n    font-size: 1.2rem;\n\t.green {\n\t\tcolor: green;\n\t}\n\t.yellow {\n\t\tcolor: yellow;\n\t}\n\t.red {\n\t\tcolor: red;\n\t}\n}\n\n\n\n\n\n\n.temperature-overlay {\n\tdisplay: inline-block;\n    min-width: 74%;\n    max-width: 74%;\n    height: 18rem;\n    vertical-align: middle;\n    color: @text-color;\n    background: rgba(0, 0, 0, 0.5);\n    box-shadow: 0 0 10px #ccc;\n    border-radius: 9rem;\n    margin-left: 2%;\n    margin-right: 1%;\n    line-height: 12rem;\n    .temp {\n\t\tdisplay: inline-block;\n\t    line-height: 18rem; \n\t    text-align: center;\n\t    width: 100%;\n\t    font-family: 'Open Sans Condensed', sans-serif !important;\n\t}\n}\n\n.fade.ng-enter {\n  transition:0.5s linear all;\n  opacity:0;\n}\n\n/* The finishing CSS styles for the enter animation */\n.fade.ng-enter.ng-enter-active {\n  opacity:1;\n}\n\n.temperature {\n\tdisplay: inline-block;\n    min-width: 74%;\n    max-width: 74%;\n    height: 18rem;\n    vertical-align: middle;\n    color: #dddddd;\n    margin-left: 2%;\n    margin-right: 1%;\n    position: relative;\n\t.temp {\n\t\tcolor: honeydew;\n\t    font-family: 'Days One', sans-serif;\n\t    font-size: 3.6rem;\n\t    font-weight: 700;\n\t    left: 0;\n\t    line-height: 6rem;\n\t    position: absolute;\n\t    text-align: center;\n\t    text-shadow: 0 0 24px rgba(255, 255, 255, 0.6);\n\t    top: 104px;\n\t    width: 100%;\n\t}\n\t.home-holder {\n\t\tposition: absolute;\n\t\ttop: -35px;\n\t\tleft: 0;\n\t\tfont-size: 23rem;\n\t\tfont-weight: 100;\n\t\ti {\n\t\t\ttext-shadow: 0 0 10px rgba(255, 255, 255, 0.5);\n\t\t}\n\t}\n\t.side-temp {\n\t\tdisplay: inline-block;\n\t    font-size: 2.5rem;\n\t    font-weight: 300;\n\t    font-family: 'Days One', sans-serif;\n\t}\n\t.celsius {\n\t\tdisplay: inline-block;\n\t\tfont-size: 2.2rem;\n\t\tfont-weight: 100;\n\t\tline-height: 4rem;\n\t\tvertical-align: super;\n\t}\n}\n\n.controls-container {\n\tdisplay: inline-block;\n    width: 20%;\n    height: 18rem;\n    /*background: linear-gradient(45deg, #31171e 0%, #aa4636 100%);*/\n    /*box-shadow: 0 0 10px #ccc;*/\n    border-radius: 1rem;\n    vertical-align: middle;\n    text-align: center;\n    color: @text-color;\n    font-size: 1.4rem;\n    margin-left: 1%;\n    /*padding: 0.4rem;*/\n\tbutton {\n\t\tbackground-color: transparent !important;\n\t\tpadding: 0 !important;\n\t\tborder: none !important;\n\t\t.icon {\n\t\t\tfont-size: 1.4rem;\n\t\t\tcolor: @text-color;\n\t\t}\n\t\t&.btn-down {\n\t\t\tmargin-top:1.4rem;\n\t\t}\n\t}\n\t.desired-temperature {\n\t\tline-height: 11rem;\n\t    font-size: 2rem;\n\t    font-weight: 700;\n\t    display: inline-block;\n\t}\n\t.desired-sub-unit-temperature {\n\t\tdisplay: inline-block;\n\t    font-size: 1.2rem;\n\t    font-weight: 300;\n\t}\n}\n\n.flame {\n\twidth: 100%;\n    left: -2.7rem;\n    position: absolute;\n    text-align: center;\n    top: 14rem;\n\t.icon {\n\t\tfont-size: 6rem;\n\t\tcolor: #c33029;\n\t\ttext-shadow: 0 0 20px @text-color;\n\t}\n}\n\n.flame2 {\n\twidth: 100%;\n\ttext-align: center;\n\tposition: absolute;\n\tpadding-top: 2rem;\n\t.icon {\n\t\tfont-size: 6rem;\n\t\tcolor: #c33029;\n\t}\n}\n\n@-webkit-keyframes slideInBothWays {\n  0% {\n    -webkit-transform: translate3d(0, 0, 0);\n    -webkit-transform: scale(1, 1);\n  }\n\n  25% {\n  \t-webkit-transform: scale(0.75, 0.85);\n  }\n \n  50% {\n    -webkit-transform: translate3d(1%,1%,0);\n    -webkit-transform: scale(1, 1);\n  }\n \n 75% {\n \t-webkit-transform: scale(0.8, 0.9);\n }\n\n  100% {\n    -webkit-transform: translate3d(0,0,0);\n    -webkit-transform: scale(1, 1);\n  }\n}\n\n@-webkit-keyframes slideInBothWays2 {\n  0% {\n    -webkit-transform: translate3d(0, 0, 0);\n    -webkit-transform: scale(1, 1);\n    -webkit-transform: rotate(9deg);\n  }\n\n  25% {\n  \t-webkit-transform: scale(0.75, 0.85);\n  \t-webkit-transform: rotate(12deg);\n  }\n \n  50% {\n    -webkit-transform: translate3d(1%,1%,0);\n    -webkit-transform: scale(1, 1);\n    -webkit-transform: rotate(3deg);\n  }\n \n 75% {\n \t-webkit-transform: scale(0.8, 0.9);\n \t-webkit-transform: rotate(-6deg);\n }\n\n  100% {\n    -webkit-transform: translate3d(0,0,0);\n    -webkit-transform: scale(1, 1);\n    -webkit-transform: rotate(9deg);\n  }\n}\n \n.slide-in-both-ways {\n\tanimation: slideInBothWays ease-in infinite;\n\tanimation-fill-mode: forwards;\n\tanimation-duration: 750ms;\n\t-webkit-animation: slideInBothWays ease-in infinite;\n\t-webkit-animation-fill-mode: forwards;\n\t-webkit-animation-duration: 750ms;\n}\n\n.slide-in-both-ways2 {\n\tanimation: slideInBothWays2 ease-in infinite;\n\tanimation-fill-mode: forwards;\n\tanimation-duration: 750ms;\n\t-webkit-animation: slideInBothWays2 ease-in infinite;\n\t-webkit-animation-fill-mode: forwards;\n\t-webkit-animation-duration: 750ms;\n}\n\n\n\n.weather {\n\tpadding: 0.2rem 0 0;\n\tbackground-color: transparent !important;\n\ttext-align: center;\n\t.symbol {\n\t\tdisplay: inline-block;\n\t\tvertical-align: top;\n\t\twidth: 22%;\n\t\ti {\n\t\t\tcolor: #66bfff;\n\t\t\tfont-size: 1.8rem;\n\t\t\tline-height: 2.46rem;\n\t\t\tvertical-align: -webkit-baseline-middle;\n\t\t}\n\t}\n\t.temp-desc {\n\t\tdisplay: inline-block;\n\t\twidth: 25%;\n\t\t.temp {\n\t\t\tfont-size: 1rem;\n\t\t\tfont-weight: 700;\n\t\t}\n\t\t.desc {\n\t\t\tfont-size: 0.8rem;\n\t\t\tline-height: 1.1rem;\n\t\t\ttext-transform: capitalize;\n\t\t\tfont-style: italic;\n\t\t}\n\t}\n\t.min-max, .humidity-pressure {\n\t\twidth: 25%;\n\t\tdisplay: inline-block;\n\t\t.min, .max, .humidity, .pressure {\n\t\t\tline-height: 1.2rem;\n\t\t}\n\t}\n\t.humidity-pressure {\n\t\twidth: 28%;\n\t}\n}\n\n.tabs-top > .tabs {\n\ttop: 0 !important;\n}\n\n\n\n.date-holder {\n\twidth: 100%;\n\ttext-align: center;\n\tpadding-top: 1rem;\n\t.title {\n\t\tfont-size: 1.2rem;\n\t}\n\t.btn-holder, .input-holder {\n\t\tdisplay: inline-block;\n\t\twidth: 32%;\n\t}\n\t.btn-holder {\n\t\tvertical-align: baseline;\n\t\t.chevron {\n\t\t\tbackground-color: transparent !important;\n\t\t\tborder: none;\n\t\t\tcolor: #eee !important;\n\t\t\tfont-size: 1.2rem;\n\t\t}\n\t}\n\t.input-holder {\n\t\tvertical-align: text-bottom;\n\t}\n\tinput[type=\"date\"] {\n\t\tbackground-color: transparent !important;\n\t\tcolor: #fff !important;\n\t\tfont-family: inherit;\n\t\tmargin-left: auto;\n\t\tmargin-right: auto;\n\t\tfont-size: 1.4rem;\n\t\twidth: auto;\n\t}\n}\n\n.chart-loading {\n\tbackground-color: rgba(0, 0, 0, 0.5);\n\tmin-width: 100%;\n\ttext-align: center;\n\tline-height: 12rem;\n}\n\n\n.graphic-holder {\n\twidth: 96%;\n    margin-left: auto;\n    margin-right: auto;\n    padding: 0.2rem 0.4rem 0 0;\n    background: linear-gradient(45deg, #31171e 0%, #aa4636 100%);\n    border-radius: 0.5rem;\n    margin-top: 0.6rem;\n    .chart-title {\n\t\ttext-align: center;\n\t    line-height: 1.6rem;\n\t    padding-top: 0.4rem;\n\t    padding-bottom: 0.2rem;\n\t}\n}\n\n\n.dash-content {\n\tpadding: 2rem 1rem 0.4rem;\n}\n\n.custom-loading {\n\tbackground-color: rgba(0, 0, 0, 0.5);\n\ttext-align: center;\n\tline-height: 20rem;\n}\n\n\n.timer-range {\n\tmargin-top: 3rem;\n\t.scale {\n\t\tul {\n\t\t\tli {\n\t\t\t\tdisplay: inline-block;\n\t\t\t\twidth: 7.6%;\n\t\t\t\ttext-align: center;\n\t\t\t}\n\t\t}\n\t}\n\t.range {\n\t\tpadding-left: 0 !important;\n\t\tpadding-right: 0 !important;\n\t\tinput {\n\t\t\tmargin-left: 0 !important;\n\t\t\tmargin-right: 0 !important;\n\t\t}\n\t}\n\t.timer {\n\t\tbackground: @bordeaux-gradient;\n\t\tborder-radius: 0.4rem;\n\t\tbox-shadow: 0 0 315px lightcoral;\n\t\tfont-size: 4rem;\n\t\tfont-weight: 500;\n\t\tline-height: 4.4rem;\n\t\tmin-height: 5rem;\n\t\tpadding-top: 0.3rem;\n\t\ttext-align: center;\n\t}\n}",
-			"file": "www/less/style.less",
-			"file_size": 7864,
-			"file_write_time": 131287291870000000,
-			"settings":
-			{
-				"buffer_size": 7864,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "(function () {\n\t'use strict';\n\n\tvar app = angular.module('starter', \n\t\t[\n\t\t\t'ionic', \n\t\t\t'btford.socket-io',\n\t\t\t'ngCordova',\n\t\t\t'chart.js',\n\t\t\t'rzModule'\n\t\t]\n\t);\n\n\tapp.run(function($ionicPlatform, $timeout, $rootScope, $cordovaDevice) {\n\t\t$ionicPlatform.ready(function() {\n\t\t\t// Hide the accessory bar by default (remove this to show the accessory bar above the keyboard\n\t\t\t// for form inputs)\n\t\t\tif (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {\n\t\t\t\tcordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);\n\t\t\t\tcordova.plugins.Keyboard.disableScroll(true);\n\n\t\t\t}\n\t\t\tif (window.StatusBar) {\n\t\t\t\tif (ionic.Platform.isAndroid()) {\n\t\t\t\t\tStatusBar.backgroundColorByHexString(\"#aa4636\");\n\t\t\t\t} else {\n\t\t\t\t\tStatusBar.styleLightContent();\n\t\t\t\t}\n\t\t\t}\n\n\t\t\tif (window.cordova) {\n\t\t\t\t$rootScope.UUID = $cordovaDevice.getUUID();\n\t\t\t} else {\n\t\t\t\t$rootScope.UUID = 'browser';\n\t\t\t}\n\n\t\t\tif (window.cordova) {\n\t\t\t\tvar push = PushNotification.init({\n\t\t\t\t    android: {\n\t\t\t\t        senderID: '469367009546',\n\t\t\t\t        icon: 'ic_stat_icon'\n\t\t\t\t    },\n\t\t\t\t    ios: {\n\t\t\t\t        alert: \"true\",\n\t\t\t\t        badge: true,\n\t\t\t\t        sound: 'false'\n\t\t\t\t    }\n\t\t\t\t});\n\n\t\t\t\tpush.on('registration', function(data) {\n\t\t\t\t    console.log('Push register: %O', data.registrationId);\n\t\t\t\t    $rootScope.$emit('pushRegistered', data.registrationId);\n\t\t\t\t});\n\n\t\t\t\tpush.on('notification', function(data) {\n\t\t\t\t\tconsole.log('PUSH NOTIICATION RECEIVED:');\n\t\t\t\t    console.log('%O', data);\n\t\t\t\t});\n\t\t\t\tpush.on('error', function(e) {\n\t\t\t\t    console.log('PUSH ERROR: ', e.message);\n\t\t\t\t});\n\t\t\t}\n\n\n\t\t\t$timeout(function () {\n\t\t\t\tif (window.cordova) {\n        \t\t\tnavigator.splashscreen.hide();\n        \t\t}\n\t\t\t}, 2000);\n\t\t});\n\t});\n\n\tapp.config(function($stateProvider, $urlRouterProvider, ChartJsProvider) {\n\n\t\tChartJsProvider.setOptions(\n\t\t\t\"global\",\n\t\t\t{\n\t      \t\tcolors: ['#FF5252', '#E595FF', '#E595FF', '#E595FF', '#E595FF', '#E595FF', '#E595FF', '#E595FF', '#E595FF', '#E595FF', '#E595FF', '#E595FF', '#E595FF', '#E595FF', '#E595FF', '#E595FF', '#E595FF', '#E595FF', '#E595FF', '#E595FF', '#E595FF', '#E595FF', '#E595FF', '#E595FF'],\n\t    \t}\n\t    );\n\n\t\t$stateProvider\n\t\t\t.state('tab', {\n\t\t\t\turl: '/tab',\n\t\t\t\tabstract: true,\n\t\t\t\tcache: false,\n\t\t\t\ttemplateUrl: 'templates/tabs.html'\n\t\t\t})\n\n\t\t\t.state('tab.dash', {\n\t\t\t\turl: '/dash',\n\t\t\t\tcache: false,\n\t\t\t\tviews: {\n\t\t\t\t\t'tab-dash': {\n\t\t\t\t\t\ttemplateUrl: 'templates/tab-dash.html',\n\t\t\t\t\t\tcontroller: 'DashCtrl'\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t})\n\n\t\t\t.state('tab.history', {\n\t\t\t\turl: '/history',\n\t\t\t\tcache: false,\n\t\t\t\tviews: {\n\t\t\t\t\t'tab-history': {\n\t\t\t\t\t\ttemplateUrl: 'templates/tab-history.html',\n\t\t\t\t\t\tcontroller: 'HistoryCtrl'\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t})\n\n\t\t\t.state('tab.settings', {\n\t\t\t\turl: '/settings',\n\t\t\t\tcache: false,\n\t\t\t\tviews: {\n\t\t\t\t\t'tab-settings': {\n\t\t\t\t\t\ttemplateUrl: 'templates/tab-settings.html',\n\t\t\t\t\t\tcontroller: 'SettingsCtrl'\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t});\n\n\t\t// if none of the above states are matched, use this as the fallback\n\t\t$urlRouterProvider.otherwise('/tab/dash');\n\n\t});\n})();",
-			"file": "www/js/app.js",
-			"file_size": 3010,
-			"file_write_time": 131285082630000000,
+			"file": "APP/www/js/app.js",
 			"settings":
 			{
 				"buffer_size": 3010,
-				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "(function () {\n\t'use strict';\n\n\tvar app = angular.module('starter');\n\n\tapp.controller('DashCtrl', function ($rootScope, $ionicSlideBoxDelegate, $scope, $state, $http, $timeout, $ionicLoading, $interval,  $cordovaDevice, Socket, Config){\n\t\tconsole.info('DashCtrl --> LOADED');\n\t\t\t\t\n\n\t\t/********************************************************************************************/\n\t\t/********************************* SOCKET LISTENERS - START *********************************/\n\n\t\tSocket.on('handShake', function () {\n            console.info('Socket (handShake) <-- RECEIVED');\n\n            $timeout(function () {\n            \tconsole.log('$rootScope.UUID = %s', $rootScope.UUID);\n            \tSocket.emit('user', $rootScope.UUID);\n            }, 1000);\n        });\n\n\t\tSocket.on('temperature', function (data) {\n            console.info('Socket (temperature) <-- RECEIVED: %s', data.temperature);\n\n            $scope.temperature = Number(data.temperature);\n            $scope.mainTemp = Math.round($scope.temperature*10)/10;\n        });\n\n        Socket.on('heatingStarted', function (data) {\n            console.info('Socket (heatingStarted) <-- RECEIVED: %O', data);\n\n            $scope.isHeating = true;\n        });\n\n        Socket.on('heatingStopped', function (data) {\n            console.info('Socket (heatingStopped) <-- RECEIVED: %O', data);\n\n            $scope.isHeating = false;\n        });\n\n        Socket.on('heatingStatus', function (data) {\n            console.info('Socket (heatingStatus) <-- RECEIVED: %O', data);\n\n            if (data === '0') {\n            \t$scope.isHeating = false;\n            } else {\n            \t$scope.isHeating = true;\n            }\n        });\n\n        Socket.on('desiredTemperature', function (data) {\n            console.info('Socket (desiredTemperature) <-- RECEIVED: %O', data);\n\n            $scope.desiredTemperature = data;\n            $scope.slider.value = data;\n        });\n\n        Socket.on('startTimer', function (data) {\n            console.info('Socket (startTimer) <-- RECEIVED');\n\n            $scope.countdownSeconds = data;\n            $scope.timerInterval = $interval(function () {\n            \t$scope.countdownSeconds--;\n            \t$scope.timeLeft = $scope.digitFormat(Math.floor($scope.countdownSeconds / 60)) + ':' + $scope.digitFormat($scope.countdownSeconds%60);\n            }, 1000);\n        });\n\n        Socket.on('stopTimer', function (data) {\n            console.info('Socket (stopTimer) <-- RECEIVED');\n\n            $interval.cancel($scope.timerInterval);\n            $scope.timer = 0;\n            $scope.timeLeft = '';\n        });\n\n         Socket.on('timer', function (timer, timerSet) {\n            console.info('Socket (timer) <-- RECEIVED: %s / %s', timer, timerSet);\n            $scope.timer = timerSet;\n\n            if (timer > 0) {\n            \t$interval.cancel($scope.timerInterval);\n            \t$scope.countdownSeconds = timer;\n\n\t            $scope.timerInterval = $interval(function () {\n\t            \t$scope.countdownSeconds--;\n\t            \t$scope.timeLeft = $scope.timeLeft = $scope.digitFormat(Math.floor($scope.countdownSeconds / 60)) + ':' + $scope.digitFormat($scope.countdownSeconds%60);\n\t            }, 1000);\n            }\n        });\n\n        Socket.on('pleaseWait', function (data) {\n            console.info('Socket (pleaseWait) <-- RECEIVED');\n\n            if (data) {\n            \t$ionicLoading.show({\n\t\t\t\t\ttemplate: 'please wait...'\n\t\t\t\t});\n            } else {\n            \t$ionicLoading.hide();\n            }\n        });\n\n\n        $rootScope.$on('pushRegistered', function (e, token) {\n\t\t\tconsole.log('$rootScope.pushRegistered event --> RECEIVED');\n\n\t\t\t$rootScope.pushToken = token;\n\n\t\t\t\n\n\t\t\tvar obj = {\n\t\t\t\tuid: $rootScope.UUID,\n\t\t\t\ttoken: $rootScope.pushToken\n\t\t\t};\n\t\t\tconsole.log('obj: %O', obj);\n\n\t\t\tSocket.emit('pushIsRegistered', obj);\n\t\t\tconsole.info('Socket (pushIsRegistered) --> SENT');\n\t\t});\n\n\t\t/********************************** SOCKET LISTENERS - END **********************************/\n\t\t/********************************************************************************************/\n\n\n\n\t\t/********************************************************************************************/\n\t\t/********************************** PUBLIC METHODS - START **********************************/\n\n\t\t$scope.digitFormat = function (digit) {\n\t\t\tif (digit.toString().length == 1) {\n\t\t\t\treturn '0' + digit;\n\t\t\t} else {\n\t\t\t\treturn digit;\n\t\t\t}\n\t\t};\n\n\t\t$scope.decreaseDesired = function () {\n\t\t\tconsole.log('OLD desiredTemperature is %s', $scope.desiredTemperature);\n\n\t\t\tif ($scope.desiredTemperature > 16) {\n\t\t\t\t$scope.desiredTemperature -= 0.5;\n\t\t\t\tconsole.log('NEW desiredTemperature is %s', $scope.desiredTemperature);\n\t\t\t\tSocket.emit('setDesiredTemperature', $scope.desiredTemperature);\n\t\t\t}\n\t\t};\n\n\t\t$scope.increaseDesired = function () {\n\t\t\tconsole.log('OLD desiredTemperature is %s', $scope.desiredTemperature);\n\n\t\t\tif ($scope.desiredTemperature < 32) {\n\t\t\t\t$scope.desiredTemperature += 0.5;\n\t\t\t\tconsole.log('NEW desiredTemperature is %s', $scope.desiredTemperature);\n\t\t\t\tSocket.emit('setDesiredTemperature', $scope.desiredTemperature);\n\t\t\t}\n\t\t};\n\n\t\t$scope.runTimer = function (timer) {\n\t\t\tconsole.log('Timer set to %s', timer);\n\t\t\t$interval.cancel($scope.timerInterval);\n\n\t\t\tif (timer === 0) {\n\t\t\t\t$scope.timeLeft = '';\n\t\t\t}\n\t\t\tSocket.emit('setTimer', timer);\n\t\t};\n\n\t\t/*********************************** PUBLIC METHODS - END ***********************************/\n\t\t/********************************************************************************************/\n\n\n\n\n\n\t\t/********************************************************************************************/\n\t\t/********************************* PRIVATE METHODS - START **********************************/\n\n\t\t$scope.$on(\"$destroy\", function(){\n\t        console.log('Leaving DashCtrl now!');\n\t        Socket.removeAllListeners();\n\t    });\n\n\t    $scope.buildScale = function () {\n\t    \t$scope.scale = [];\n\n\t    \tfor (var i = 0; i <= 60; i+=5) {\n\t    \t\t$scope.scale.push(i);\n\t    \t}\n\t    };\n\n\t    $scope.mouseoverWideDiv = function() {\n\t    \tconsole.log('Disabling now swipe');\n\t\t    $ionicSlideBoxDelegate.enableSlide(false);\n\t\t};\n\n\t\t$scope.mouseleaveWideDiv = function() {\n\t\t\tconsole.log('Enabling now swipe');\n\t\t    $ionicSlideBoxDelegate.enableSlide(true);\n\t\t};\n\n\t\t$scope.setNewTemperature = function () {\n\t\t\tif ($scope.slider && $scope.slider.value) {\n\t\t\t\tconsole.log('About to set a new temp of %s', $scope.slider.value);\n\t\t\t\tSocket.emit('setDesiredTemperature', $scope.slider.value);\n\t\t\t} else {\n\t\t\t\tconsole.log('No $scope.slider.value here!');\n\t\t\t}\n\t\t};\n\n\t\t/********************************** PRIVATE METHODS - END ***********************************/\n\t\t/********************************************************************************************/\n\n\n\n\n\n\t\t/********************************************************************************************/\n\t\t/************************************ RUN ONLOAD - START ************************************/\t\n\n\t\tSocket.emit('getDesiredTemperature');\n\t\tSocket.emit('getHeatingStatus');\n\t\tSocket.emit('getTimer');\n\n\t\tconsole.log('timestamp now: %s', new Date().getTime());\n\t\tconsole.log(new Date());\n\t\tvar y = new Date().getFullYear() + 1;\n\t\tvar yDate = new Date(y, 0, 1).getTime();\n\t\tconsole.log('year timestamp: %s', yDate);\n\t\tconsole.log(new Date(y, 0, 1));\n\n\t\t$scope.buildScale();\n\n\t\t$scope.slider = {\n\t\t\toptions: {\n\t\t\t\tfloor: \t\t10,\n\t\t\t\tceil: \t\t32,\n\t\t\t\tvertical: \ttrue,\n\t\t\t\tshowSelectionBar: true,\n\t\t\t\tonEnd: function (id) {\n\t\t\t\t\t$scope.setNewTemperature(id);\n\t\t\t\t}\n\t\t\t}\n\t\t};\n\n\t\t/************************************* RUN ONLOAD - END *************************************/\n\t\t/********************************************************************************************/\n\n\n\t});\n\n})();",
-			"file": "www/js/controllers/Dash.js",
-			"file_size": 7784,
-			"file_write_time": 131285112060000000,
+			"file": "APP/www/js/controllers/Dash.js",
 			"settings":
 			{
 				"buffer_size": 7784,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "API/thermopi.js",
+			"settings":
+			{
+				"buffer_size": 20813,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "APP/www/js/services/Config.js",
+			"settings":
+			{
+				"buffer_size": 276,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "(function () {\n\t'use strict';\n\n\t/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DEPENDENCIES - START ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/\n\n\tvar Config = {\n\t\thttpPort: 11000,\n\t\tusername: 'webiopi',\n\t\tpassword: 'raspberry',\n\t\twebiopiURL: 'xyboox.go.ro:8000'\n\t};\n\n\t// pmx\n\tvar pmx = require('pmx');\n\tpmx.init();\n\n\tvar temperature;\n\tvar timer = 0;\n\tvar timerSet = 0;\n\tvar sockets = [];\n\tvar desiredTemperature = 10;\n\tvar heatingStatus = false;\n\tvar countT = 0;\n\tvar operationPending = false;\n\tvar startTime, stopTime, interval;\n\n\t\n\t// http\n\tvar http = require('http');\n\n\n\t//debugging\n\tvar colors = require('colors');\n\tcolors.setTheme({\n\t\tinfo: 'green',\n\t\tdata: 'magenta',\n\t\twarn: 'yellow',\n\t\terror: 'red',\n\t\tevent: 'cyan',\n\t\treceivedEvent: 'lightcyan'\n\t});\n\n\n\t//util\n\tvar util = require('util');\n\tvar fs = require('fs');\n\n\n\t//inspector\n\tvar inspector = require('schema-inspector');\n\n\n\t// push\n\tvar gcm = require('node-gcm');\n\tvar retry_times = 4; //the number of times to retry sending the message if it fails\n    var sender = new gcm.Sender('AIzaSyAtFMu5FW-iNXmu14SbP6ZGVRremFt5tiw'); //create a new sender\n    var message = new gcm.Message(); //create a new message\n\n\n\t// multipart ( for file upload )\n\tvar multipart = require('connect-multiparty');\n\tvar multipartMiddleware = multipart();\n\tvar multiparty = require('multiparty');\n\n\n\t//trace\n\tvar logger = require('tracer').colorConsole({\n\t\tformat : [\n\t\t\t'{{timestamp}} (in line: {{line}}) >> {{message}}', //default format\n\t\t\t{\n\t\t\t\terror : '{{timestamp}} <{{title}}> {{message}} (in {{file}}:{{line}})\\nCall Stack:\\n{{stack}}' // error format\n\t\t\t} \n\t\t],\n\t\tdateformat : 'HH:MM:ss.L',\n\t\tpreprocess :  function(data){\n\t\t\tdata.title = data.title.toUpperCase();\n\t\t}\n\t});\n\n\n\n\t//firebase\n\tvar firebase = require(\"firebase\");\n\tfirebase.initializeApp({\n\t\tdatabaseURL: \"https://thermopi-f0973.firebaseio.com/\",\n\t\tserviceAccount: __dirname + \"/credentials/ThermoPi.json\"\n\t});\n\tvar FBase = firebase.database();\n\n\n\t//request\n\tvar request = require('request');\n\tConfig.apiURL = \"http://\" + Config.username + \":\" + Config.password + \"@\" + Config.webiopiURL;\n\n\n\t//express\n\tvar express = require('express');\n\tvar morgan = require('morgan');             \n    var bodyParser = require('body-parser');\n\n\tvar app = express();\n\tapp.use(express.static(__dirname + '/public')); \n\tapp.use(morgan('dev'));\n    app.use(bodyParser.json({limit: \"50mb\", type:'application/json'}));\n\tapp.use(bodyParser.urlencoded({limit: '50mb', 'extended': true, type:'application/x-www-form-urlencoding'}));\n\n\n    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DEPENDENCIES - END ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/\n\n\n\n\n   \n    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ROUTES - START ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/\n\n    app.use(function(req, res, next) {\n\t\tres.header('Access-Control-Allow-Origin', '*');\n\t\tres.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');\n\t\tres.header('Access-Control-Allow-Headers', 'X-Requested-With,Content-Type,Cache-Control');\n\t\tif (req.method === 'OPTIONS') {\n\t\t\tres.statusCode = 204;\n\t\t\treturn res.end();\n\t\t} else {\n\t\t\treturn next();\n\t\t}\n\t});\n\n\n\n\n\n\tapp.post('/test', function(req, res) {\n\t\tlogger.info('EXPRESS: post(\"/test\") --> RECEIVED'.event);\n\n\t\tvar status, message, data;\n\n\t\tvar params = req.body;\n\n\t\tlogger.log('params:');\n\t\tlogger.log('%O', params);\n\n\t\tmakeResponse(res, status, message, data);\n\t});\n\n\n\n\n\n\tapp.post('/createTempUser', function(req, res) {\n\t\tlogger.info('EXPRESS: post(\"/createTempUser\") --> RECEIVED'.event);\n\n\t\tvar status, message, data;\n\n\t\tvar schema = {\n\t\t    type: 'object',\n\t\t    properties: {\n\t\t        name: {  \n\t\t        \ttype: 'string'\n\t\t        }\n    \t\t}\n\t\t};\n\n\t\tvar params = req.body;\n\t\tlogger.log('params: %O', params);\n\n\t\tvar validationresult = inspector.validate(schema, params);\n\n\t\tif (!validationresult.valid){\n\t\t\t// INVALID\n\t\t\tstatus = 0;\n\t\t\tmessage = validationresult.format();\n\t\t\tlogger.log(validationresult.format());\n\t\t\tmakeResponse(res, status, message, data);\n\t\t} else {\n\t\t\tlogger.info('Validation passed');\n\n\t\t\t\n\t\t}\t\n\t});\n\n\n\t\n\n\n\t// default route\n\tapp.get('*', function(req, res) {\n\t\tlogger.info('EXPRESS: get(\"*\") --> RECEIVED'.event);\n\n\t\tres.set('Access-Control-Allow-Origin', '*');\n        res.sendFile('./public/404.html', { root: __dirname }); \n    });\n\n    app.use(pmx.expressErrorHandler());\n\n\t/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ROUTES - END ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */\n\n\n\n    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ RUN THE SERVER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/\n\n\tvar server = http.createServer(app);\n\n\tvar io = require('socket.io')(server);\n\n\tserver.listen(Config.httpPort, function () {\n\n\t\tconsole.log(' ');\n\t\tconsole.log(' ');\n\t\tconsole.log(' ');\n\t\tconsole.log(' ');\n\t\tconsole.log(' ');\n\t\tconsole.log('                                |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|'.error);\n\t\tconsole.log('                                |~~~~~~~~~~~~~~~~~~~ '.error + 'SERVER READY'.info + ' ~~~~~~~~~~~~~~~~~~~~|'.error);\n\t    console.log('                                |~~~~~~~~~~~ '.error + 'App listening on port '.event + Config.httpPort + ' ~~~~~~~~~~~~~|'.error);\n\t    console.log('                                |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|'.error);\n\t    console.log('                                |~~~~'.error + ' TDEQC MMWCS RAVAH LMARI YPEMQ ECKRQ CBLST A '.warn + '~~~~|'.error);\n\t    console.log('                                |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|'.error);\n\t    console.log(' ');                                                                                     \n\t    console.log(' ');\n\t    console.log(' ');                   \n\t\tconsole.log('   8888888888                   d8b                                                 888      888                  ');\n\t\tconsole.log('   888                          Y8P                                                 888      888                  ');\n\t\tconsole.log('   888                                                                              888      888                  ');\n\t\tconsole.log('   8888888    88888b.   .d88b.  888 88888b.   .d88b.   .d88b.  888d888 .d88b.   .d88888      88888b.  888  888    ');\n\t\tconsole.log('   888        888 \"88b d88P\"88b 888 888 \"88b d8P  Y8b d8P  Y8b 888P\"  d8P  Y8b d88\" 888      888 \"88b 888  888    ');\n\t\tconsole.log('   888        888  888 888  888 888 888  888 88888888 88888888 888    88888888 888  888      888  888 888  888    ');\n\t\tconsole.log('   888        888  888 Y88b 888 888 888  888 Y8b.     Y8b.     888    Y8b.     Y88b 888      888 d88P Y88b 888    ');\n\t\tconsole.log('   8888888888 888  888  \"Y88888 888 888  888  \"Y8888   \"Y8888  888     \"Y8888   \"Y88888      88888P\"   \"Y88888    ');\n\t\tconsole.log('                            888                                                                            888    ');\n\t\tconsole.log('                       Y8b d88P                                                                       Y8b d88P    ');\n\t\tconsole.log('                        \"Y88P\"                                                                         \"Y88P\"     ');\n\t\tconsole.log('                                      888    8888888b.           .d888 888                                            ');\n\t\tconsole.log('                                      888    888   Y88b         d88P\"  888                                            ');\n\t\tconsole.log('                                      888    888    888         888    888                                            ');\n\t\tconsole.log('       d8b d8b      .d8888b   .d88b.  888888 888   d88P .d88b.  888888 888  .d88b.  888  888      d8b d8b             ');\n\t\tconsole.log('       Y8P Y8P      88K      d8P  Y8b 888    8888888P\" d8P  Y8b 888    888 d8P  Y8b `Y8bd8P\\'      Y8P Y8P             ');\n\t\tconsole.log('                    \"Y8888b. 88888888 888    888 T88b  88888888 888    888 88888888   X88K                            ');\n\t\tconsole.log('       d8b d8b           X88 Y8b.     Y88b.  888  T88b Y8b.     888    888 Y8b.     .d8\"\"8b.      d8b d8b             ');\n\t\tconsole.log('       Y8P Y8P       88888P\\'  \"Y8888   \"Y888 888   T88b \"Y8888  888    888  \"Y8888  888  888      Y8P Y8P             ');\n\t\tconsole.log(' ');\n\t\tconsole.log(' ');\n\t\tconsole.log(' ');\n\t\t                                                                                                     \n\t});\n\n\tsetPinAsOutput();\n\n   \tsetInterval(function () {\n   \t\tgetTemperature();\n   \t}, 10000);\n\n\t/*---------------------------------------------------------------------------------------------------*/\n\n\n\n\n\n\n\t/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/\n\t/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SOCKET EVENTS - START ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/\n\n\tio.on('connection', function(socket){\n\t\tlogger.info('User connected. Socket.id: %s'.info, socket.id);\n\t\tsockets.push(socket);\n\n\t\tsocket.emit('handShake');\n\n\t\tsocket.emit('temperature', {temperature: temperature});\n\n\n\t\tsocket.on('test', function (user) {\n\t\t\tlogger.info('Socket (test) <-- RECEIVED '.event);\n\t\t});\n\n\n\t\tsocket.on('ping', function (user) {\n\t\t\tlogger.info('Socket (ping) <-- RECEIVED '.event);\n\n\t\t\tsocket.emit('ping', {status: true});\n\t\t});\n\n\n\t\tsocket.on('user', function (uuid) {\n\t\t\tlogger.info('Socket (user) <-- RECEIVED '.event);\n\n\t\t\tFBase.ref('users/' + uuid).once('value', function (snapshot) {\n\t\t\t\tvar user = snapshot.val();\n\n\t\t\t\tif (!user) {\n\t\t\t\t\tFBase.ref('users/' + uuid).set({\n\t\t\t\t\t\tuid: uuid\n\t\t\t\t\t});\n\t\t\t\t}\n\t\t\t});\n\t\t});\n\n\n\t\tsocket.on('pushIsRegistered', function (data) {\n\t\t\tlogger.info('Socket (pushIsRegistered) <-- RECEIVED: '.event);\n\n\t\t\tFBase.ref('users/' + data.uid + '/pushTokens').once('value', function (snapshot) {\n\t\t\t\tvar tokens = snapshot.val();\n\n\t\t\t\tvar flag = false;\n\n\t\t\t\tfor (var t in tokens) {\n\t\t\t\t\tif (tokens[t] == data.token) {\n\t\t\t\t\t\tflag = true;\n\t\t\t\t\t\tbreak;\n\t\t\t\t\t}\n\t\t\t\t}\n\n\t\t\t\tif (!flag) {\n\t\t\t\t\tFBase.ref('users/' + data.uid + '/pushTokens').push(data.token, function (err) {\n\t\t\t\t\t\tif (err) {\n\t\t\t\t\t\t\tlogger.info('Push token ERROR: %O', err);\n\t\t\t\t\t\t}\n\t\t\t\t\t});\n\t\t\t\t}\n\t\t\t});\n\t\t});\n\n\n\t\tsocket.on('getHeatingStatus', function () {\n\t\t\tlogger.info('Socket (getHeatingStatus) <-- RECEIVED: '.event);\n\n\t\t\tif (heatingStatus) {\n\t\t\t\tsocket.emit('heatingStatus', '1');\n\t\t\t} else {\n\t\t\t\tsocket.emit('heatingStatus', '0');\n\t\t\t}\n\t\t});\n\n\n\t\tsocket.on('setDesiredTemperature', function (data) {\n\t\t\tlogger.info('Socket (setDesiredTemperature) <-- RECEIVED: %s'.event, data);\n\n\t\t\tdesiredTemperature = data;\n\t\t\tio.sockets.emit('desiredTemperature', desiredTemperature);\n\t\t});\n\n\n\t\tsocket.on('getDesiredTemperature', function () {\n\t\t\tlogger.info('Socket (getDesiredTemperature) <-- RECEIVED: '.event);\n\n\t\t\tsocket.emit('desiredTemperature', desiredTemperature);\n\t\t});\n\n\n\t\tsocket.on('getData', function (date) {\n\t\t\tlogger.info('Socket (getData) <-- RECEIVED:'.event);\n\t\t\tlogger.info('%O', date);\n\n\t\t\tvar year = date.year;\n\t\t\tvar month = getNiceMonth(date.month);\n\t\t\tvar day = date.day;\n\n\t\t\tFBase.ref('temperatures/' + year + '/' + month + '/' + day).once('value', function (snapshot) {\n\t\t\t\tvar temps = snapshot.val();\n\n\t\t\t\tvar data = newEmptyData();\n\n\t\t\t\tfor (var t in temps) {\n\t\t\t\t\tvar h = extractHour(temps[t].timestamp);\n\t\t\t\t\tvar temp = Number(temps[t].temperature);\n\t\t\t\t\tdata[h][0]++;\n\t\t\t\t\tdata[h][1] += temp;\n\t\t\t\t}\n\n\t\t\t\tlogger.info('today\\'s temperatures:');\n\t\t\t\tlogger.info('%O', data);\n\n\t\t\t\tvar results = [];\n\t\t\t\tfor (var d in data) {\n\t\t\t\t\tresults[d] = data[d][1] / data[d][0] || 0;\n\t\t\t\t}\n\n\t\t\t\tFBase.ref('running/' + year + '/' + month + '/' + day).once('value', function (snapshot) {\n\t\t\t\t\tvar hours = snapshot.val();\n\n\t\t\t\t\tvar data = newEmptyRunningsArr();\n\n\t\t\t\t\tfor (var d in data) {\n\t\t\t\t\t\tfor (var h in hours) {\n\t\t\t\t\t\t\tif (d == h) {\n\t\t\t\t\t\t\t\tdata[h] = hours[h];\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\t\n\n\t\t\t\t\tvar rs = {\n\t\t\t\t\t\ttemperatures: results,\n\t\t\t\t\t\trunnings: data\n\t\t\t\t\t};\n\n\t\t\t\t\tsocket.emit('data', rs);\n\t\t\t\t});\n\t\t\t});\n\n\t\t});\n\n\n\t\tsocket.on('setTimer', function (data) {\n\t\t\tlogger.info('Socket (setTimer) <-- RECEIVED: %s'.event, data);\n\n\t\t\tconsole.log('temperature now: %s', temperature);\n\t\t\tconsole.log('desiredTemperature now: %s', desiredTemperature);\n\n\t\t\ttimer = data * 60;\n\t\t\ttimerSet = data;\n\n\t\t\tio.sockets.emit('startTimer', timer);\n\n\t\t\tvar timerInterval = setInterval(function () {\n\t\t\t\tif (desiredTemperature <= temperature) {\n\t\t\t\t\tdesiredTemperature = Math.ceil(temperature) + 5;\n\t\t\t\t\tsocket.emit('desiredTemperature', desiredTemperature);\n\t\t\t\t}\n\n\t\t\t\ttimer--;\n\n\t\t\t\tif (timer <= 0) {\n\t\t\t\t\ttimerSet = 0;\n\t\t\t\t\tclearInterval(timerInterval);\n\t\t\t\t\tdesiredTemperature = Math.floor(temperature) - 5;\n\t\t\t\t\tsocket.emit('desiredTemperature', desiredTemperature);\n\t\t\t\t\tio.sockets.emit('stopTimer');\n\t\t\t\t}\n\t\t\t}, 1000);\n\t\t});\n\n\n\t\tsocket.on('getTimer', function () {\n\t\t\tlogger.info('Socket (getTimer) <-- RECEIVED'.event);\n\n\t\t\tsocket.emit('timer', timer, timerSet);\n\t\t});\n\n\n\t\t\n\t\t\n\n\n\t\t/**********************************************************************************************/\n\t\tsocket.on('disconnect', function () {\n\t\t\tlogger.info('User %s DISCONNECTED'.error, socket.id);\n\n\t\t\tfor (var i = 0; i < sockets.length; i++) {\n\t\t\t\tif (sockets[i].id == socket.id) {\n\t\t\t\t\tsockets.splice(i, 1);\n\t\t\t\t\tbreak;\n\t\t\t\t}\n\t\t\t}\n\t\t});\n\t\t/**********************************************************************************************/\n\n\t});\n\n\t/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SOCKET EVENTS - END ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/\n\t/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/\n\n\n\n\n\n\n\n\n\t/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PRIVATE METHODS - START ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/\n\n    function makeResponse (res, status, message, data) {\n\t\tres.set('Access-Control-Allow-Origin', '*');\n    \tres.status(200).json({\n    \t\tstatus: status,\n    \t\tmessage: message,\n    \t\tdata: data\n    \t});\n    }\n\n    function extractHour (timestamp) {\n    \tvar d = new Date(timestamp);\n    \tvar h = d.getHours();\n    \treturn h;\n    }\n\n    function newEmptyData () {\n    \tvar arr = [];\n\n    \tfor (var i = 0; i < 24; i++) {\n    \t\tarr[i] = [0, 0];\n    \t}\n\n    \treturn arr;\n    }\n\n    function getTemperature () {\n    \tvar temperatureURL = Config.apiURL + '/devices/temp0/sensor/temperature/c';\n\n    \trequest(\n\t\t    {\n\t\t        url : temperatureURL\n\t\t    },\n\t\t    function (error, response, body) {\n\t\t    \tif (error) {\n\t\t    \t\tlogger.log('WebIOPi getTemp error: %O', error);\n\t\t    \t}\n\n\t\t    \ttemperature = body;\n\n\t\t        logger.info('Temperature: %s', temperature);\n\n\t\t        var roundTemperature = Math.round(temperature*10)/10;\n\t\t        logger.info('roundTmperature: %s', roundTemperature);\n\n\n\t\t        var d = new Date();\n\t\t        var year = d.getFullYear();\n\t\t        var month = getNiceMonth(d.getMonth());\n\t\t        var day = d.getDate();\n\t\t        var timestamp = d.getTime();\n\n\t\t        var entry = {\n\t\t        \ttimestamp: timestamp,\n\t\t        \ttemperature: temperature\n\t\t        };\n\n\t\t        countT++;\n\t\t        if (countT === 60) {\n\t\t        \tFBase.ref('temperatures/' + year + '/' + month + '/' + day).push(entry);\n\t\t        \tcountT = 0;\n\t\t        }\n\n\t\t        io.sockets.emit('temperature', {temperature: roundTemperature});\n\n\t\t        if (roundTemperature) {\n\t\t        \tif (roundTemperature >= desiredTemperature) {\n\t\t\t        \tif (heatingStatus && !operationPending) {\n\t\t\t        \t\tlogger.info('Have a temp of ' + roundTemperature + ' and requested one of ' + desiredTemperature);\n\n\t\t\t        \t\tvar url = Config.apiURL + '/GPIO/17/value/1';\n\t\t\t\t\t\t\trequest.post({\n\t\t\t\t\t\t\t\theaders: {'content-type' : 'application/x-www-form-urlencoded'},\n\t\t\t\t\t\t\t\turl:     url,\n\t\t\t\t\t\t\t\tbody:    \"\"\n\t\t\t\t\t\t\t}, function(error, response, body){\n\t\t\t\t\t\t\t\tif (error) {\n\t\t\t\t\t\t\t\t\tlogger.info(url + ': ERROR: %O', error);\n\t\t\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\t\t\tlogger.log('heatingStatus is now %s', body);\n\n\t\t\t\t\t\t\t\t\tio.sockets.emit('heatingStopped', body);\n\t\t\t\t\t\t\t\t\theatingStatus = false;\n\n\t\t\t\t\t\t\t\t\tclearInterval(interval);\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\toperationPending = false;\n\t\t\t\t\t\t\t\tio.sockets.emit('pleaseWait', false);\n\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\toperationPending = true;\n\t\t\t\t\t\t\tio.sockets.emit('pleaseWait', true);\n\t\t\t        \t}\n\t\t\t        } else {\n\t\t\t        \tif (!heatingStatus && !operationPending) {\n\t\t\t        \t\tlogger.info('Have a temp of ' + temperature + ' and requested one of ' + desiredTemperature);\n\n\t\t\t        \t\tvar url = Config.apiURL + '/GPIO/17/value/0';\n\t\t\t\t\t\t\trequest.post({\n\t\t\t\t\t\t\t\theaders: {'content-type' : 'application/x-www-form-urlencoded'},\n\t\t\t\t\t\t\t\turl:     url,\n\t\t\t\t\t\t\t\tbody:    \"\"\n\t\t\t\t\t\t\t}, function(error, response, body){\n\t\t\t\t\t\t\t\tif (error) {\n\t\t\t\t\t\t\t\t\tlogger.info(url + ': ERROR: %O', error);\n\t\t\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\t\t\tlogger.log('heatingStatus is now %s', body);\n\n\t\t\t\t\t\t\t\t\tio.sockets.emit('heatingStarted', body);\n\t\t\t\t\t\t\t\t\theatingStatus = true;\n\n\t\t\t\t\t\t\t\t\tsendPush();\n\n\t\t\t\t\t\t\t\t\tinterval = setInterval(function () {\n\t\t\t\t\t\t\t\t\t\tvar d = new Date();\n\t\t\t\t\t\t\t\t\t\tvar year = d.getFullYear();\n\t\t\t\t\t\t\t\t\t\tvar month = getNiceMonth(d.getMonth());\n\t\t\t\t\t\t\t\t\t\tvar day = d.getDate();\n\t\t\t\t\t\t\t\t\t\tvar hour = d.getHours();\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\taddMinuteToRunning(year, month, day, hour);\n\t\t\t\t\t\t\t\t\t}, 60000);\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\toperationPending = false;\n\t\t\t\t\t\t\t\tio.sockets.emit('pleaseWait', false);\n\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\toperationPending = true;\n\t\t\t\t\t\t\tio.sockets.emit('pleaseWait', true);\n\t\t\t        \t}\n\t\t\t        }\n\t\t        }\n\t\t    }\n\t\t);\n    }\n\n    function addMinuteToRunning (year, month, day, hour) {\n    \tFBase.ref('running/' + year + '/' + month + '/' + day + '/' + hour).transaction(function (minutes) {\n    \t\treturn minutes + 1;\n    \t});\n    }\n\n    function setPinAsOutput () {\n    \tvar temperatureURL = Config.apiURL + '/devices/temp0/sensor/temperature/c';\n\n    \tvar url = Config.apiURL + '/GPIO/17/function/out';\n\t\trequest.post({\n\t\t\theaders: {'content-type' : 'application/x-www-form-urlencoded'},\n\t\t\turl:     url,\n\t\t\tbody:    \"\"\n\t\t}, function(error, response, body){\n\t\t\tlogger.log('Heating function status: %s', body);\n\n\t\t\tvar url = Config.apiURL + '/GPIO/17/value/1';\n\t\t\trequest.post(\n\t\t\t    {\n\t\t\t        headers: {'content-type' : 'application/x-www-form-urlencoded'},\n\t\t\t\t\turl:     url,\n\t\t\t\t\tbody:    \"\"\n\t\t\t    },\n\t\t\t    function (error, response, body) {\n\t\t\t        var url = Config.apiURL + '/GPIO/17/value';\n\t\t\t\t\trequest(\n\t\t\t\t\t    {\n\t\t\t\t\t        url : url\n\t\t\t\t\t    },\n\t\t\t\t\t    function (error, response, body) {\n\t\t\t\t\t        logger.info('Initial Heating status: %s', body);\n\t\t\t\t\t        \n\t\t\t\t\t        if (body === '1') {\n\t\t\t\t\t        \theatingStatus = false;\n\t\t\t\t\t        } else {\n\t\t\t\t\t        \theatingStatus = true;\n\t\t\t\t\t        }\n\t\t\t\t\t    }\n\t\t\t\t\t);\n\t\t\t    }\n\t\t\t);\n\t\t});\n    }\n\n    function sendPush () {\n\t\tFBase.ref('users').once('value', function (snapshot) {\n\t\t\tvar users = snapshot.val();\n\n\t\t\tvar usersToBeNotied = [];\n\n\t\t\tfor (var u in users) {\n\t\t\t\tfor (var p in users[u].pushTokens) {\n\t\t\t\t\tusersToBeNotied.push(users[u].pushTokens[p]);\n\t\t\t\t}\n\t\t\t}\n\n\t\t    message.addData('title', 'ThermoPi');\n\t\t    message.addData('message', 'A pornit centrala termica!');\n\t\t    message.addData('sound', 'notification');\n\t\t    message.addData('image', 'icon');\n\n\t\t    message.collapseKey = 'testing'; //grouping messages\n\t\t    message.delayWhileIdle = true; //delay sending while receiving device is offline\n\t\t    message.timeToLive = 3; //the number of seconds to keep the message on the server if the device is offline\n\n\t\t    console.log('usersToBeNotied: %O', usersToBeNotied);\n\n\t\t    sender.send(message, usersToBeNotied, retry_times, function(result){\n\t\t        console.log('Push result: ' + result);\n\t\t    });\n\n\t\t\tconsole.log('Push SENT!');\n\t\t});\n\t}\n\n\tfunction getNiceMonth (month) {\n   \t\tvar months = [\n   \t\t\t'January',\n   \t\t\t'February',\n   \t\t\t'March',\n   \t\t\t'April',\n   \t\t\t'May',\n   \t\t\t'June',\n   \t\t\t'July',\n   \t\t\t'August',\n   \t\t\t'September',\n   \t\t\t'October',\n   \t\t\t'November',\n   \t\t\t'December'\n   \t\t];\n\n\t   \tvar niceMonth = months[month];\n\t   \treturn niceMonth;\n   \t}\n\n   \tfunction newEmptyRunningsArr () {\n   \t\tvar data = [];\n\n   \t\tfor (var i = 1; i <= 24; i++) {\n   \t\t\tdata.push(0);\n   \t\t}\n\n   \t\treturn data;\n   \t}\n    \n\t/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PRIVATE METHODS - END ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */\n\n})();",
-			"file": "server/thermopi.js",
-			"file_size": 20813,
-			"file_write_time": 131285072830000000,
+			"file": "API/thermopi-slave.js",
 			"settings":
 			{
-				"buffer_size": 20813,
+				"buffer_size": 9398,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -500,10 +517,28 @@
 	},
 	"expanded_folders":
 	[
-		"/Volumes/WORK/Projects/IonicProjects/ThermoPi"
+		"/Volumes/WORK/Projects/IonicProjects/ThermoPi",
+		"/Volumes/WORK/Projects/IonicProjects/ThermoPi/API",
+		"/Volumes/WORK/Projects/IonicProjects/ThermoPi/APP",
+		"/Volumes/WORK/Projects/IonicProjects/ThermoPi/APP/www",
+		"/Volumes/WORK/Projects/IonicProjects/ThermoPi/APP/www/css",
+		"/Volumes/WORK/Projects/IonicProjects/ThermoPi/APP/www/js",
+		"/Volumes/WORK/Projects/IonicProjects/ThermoPi/APP/www/js/controllers",
+		"/Volumes/WORK/Projects/IonicProjects/ThermoPi/APP/www/js/services",
+		"/Volumes/WORK/Projects/IonicProjects/ThermoPi/APP/www/less",
+		"/Volumes/WORK/Projects/IonicProjects/ThermoPi/APP/www/templates"
 	],
 	"file_history":
 	[
+		"/Volumes/WORK/Projects/IonicProjects/ThermoPi/API/package.json",
+		"/Volumes/WORK/Projects/IonicProjects/ThermoPi/API/README.md",
+		"/Volumes/WORK/Projects/IonicProjects/ThermoPi/APP/README.md",
+		"/Volumes/WORK/Projects/IonicProjects/ThermoPi/README.md",
+		"/Volumes/WORK/Projects/IonicProjects/ThermoPi/server/thermopi.js",
+		"/Volumes/WORK/Projects/IonicProjects/ThermoPi/www/js/controllers/Dash.js",
+		"/Volumes/WORK/Projects/IonicProjects/ThermoPi/www/js/app.js",
+		"/Volumes/WORK/Projects/IonicProjects/ThermoPi/www/less/style.less",
+		"/Volumes/WORK/Projects/IonicProjects/ThermoPi/www/templates/tab-dash.html",
 		"/Volumes/WORK/Projects/IonicProjects/ThermoPi/ThermoPi.sublime-project",
 		"/Volumes/WORK/Projects/IonicProjects/ThermoPi/www/index.html",
 		"/Volumes/WORK/Projects/IonicProjects/ThermoPi/package.json",
@@ -514,7 +549,6 @@
 		"/Volumes/WORK/Projects/IonicProjects/ThermoPi/www/js/controllers/Weather.js",
 		"/Volumes/WORK/Projects/IonicProjects/ThermoPi/www/less/range.less",
 		"/Volumes/WORK/Projects/IonicProjects/ThermoPi/www/templates/tabs.html",
-		"/Volumes/WORK/Projects/IonicProjects/ThermoPi/www/templates/tab-dash.html",
 		"/Volumes/WORK/Projects/IonicProjects/ThermoPi/www/js/slidingTabsDirective.js",
 		"/Volumes/WORK/Projects/IonicProjects/ThermoPi/www/js/controllers/History.js",
 		"/Volumes/WORK/Projects/IonicProjects/ThermoPi/www/css/slidingTabs.css",
@@ -623,15 +657,7 @@
 		"/Volumes/WORK/Git/trivia-monsters/app/www/templates/friendsfbconnect.html",
 		"/Volumes/WORK/Git/trivia-monsters/app/www/js/services/Auth.js",
 		"/Volumes/WORK/Git/trivia-monsters/HTMLCSS/friends-facebook.html",
-		"/Volumes/WORK/Git/trivia-monsters/app/www/lib/facebook/facebookConnectPlugin.js",
-		"/Volumes/WORK/Git/trivia-monsters/app/www/js/controllers/FriendsFB.js",
-		"/Volumes/WORK/Git/trivia-monsters/app/www/js/controllers/Friends.js",
-		"/Volumes/WORK/Git/trivia-monsters/app/www/templates/friends.html",
-		"/Volumes/WORK/Git/trivia-monsters/app/www/js/controllers/MainMenu.js",
-		"/Volumes/WORK/Git/trivia-monsters/app/www/templates/mainmenu.html",
-		"/Volumes/WORK/Git/trivia-monsters/app/www/templates/login.html",
-		"/Volumes/WORK/Git/trivia-monsters/app/www/js/controllers/CategoryPopup.js",
-		"/Volumes/WORK/Git/trivia-monsters/app/www/lib/jQueryRotate/jQueryRotate.js"
+		"/Volumes/WORK/Git/trivia-monsters/app/www/lib/facebook/facebookConnectPlugin.js"
 	],
 	"find":
 	{
@@ -654,6 +680,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"post",
+			"test",
+			"roundtmpera",
 			"weath",
 			"timeLeft",
 			"010101",
@@ -778,10 +807,7 @@
 			"updateStoreItem",
 			"dailyquest",
 			"getQuest",
-			"EditStoreCtrl",
-			"addStoreItem",
-			"quest",
-			"Item"
+			"EditStoreCtrl"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -800,12 +826,105 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "www/templates/tab-dash.html",
+					"file": "APP/www/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1827,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								661,
+								661
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme.tmTheme",
+							"sorttabs_lastactivated": 1485849405.62,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "APP/www/less/style.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7863,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								743,
+								743
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme.tmTheme",
+							"sorttabs_lastactivated": 1485853996.05,
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "APP/www/css/weather-icons.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 30769,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								30734,
+								30734
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme.tmTheme",
+							"sorttabs_lastactivated": 1485849294.77,
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 26746.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "APP/www/templates/tab-dash.html",
 					"semi_transient": false,
 					"settings":
 					{
@@ -816,14 +935,14 @@
 						"selection":
 						[
 							[
-								1096,
-								1096
+								0,
+								0
 							]
 						],
 						"settings":
 						{
 							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme.tmTheme",
-							"sorttabs_lastactivated": 1484645805.07,
+							"sorttabs_lastactivated": 1484645886.22,
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
@@ -831,48 +950,18 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "www/less/style.less",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7864,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7189,
-								7189
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme.tmTheme",
-							"sorttabs_lastactivated": 1484297698.56,
-							"syntax": "Packages/CSS/CSS.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 5603.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 1,
+			"selected": 3,
 			"sheets":
 			[
 				{
-					"buffer": 2,
-					"file": "www/js/app.js",
+					"buffer": 4,
+					"file": "APP/www/js/app.js",
 					"semi_transient": false,
 					"settings":
 					{
@@ -883,14 +972,14 @@
 						"selection":
 						[
 							[
-								152,
-								152
+								0,
+								0
 							]
 						],
 						"settings":
 						{
 							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme.tmTheme",
-							"sorttabs_lastactivated": 1484034729.7,
+							"sorttabs_lastactivated": 1484645863.12,
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
@@ -898,12 +987,12 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "www/js/controllers/Dash.js",
+					"buffer": 5,
+					"file": "APP/www/js/controllers/Dash.js",
 					"semi_transient": false,
 					"settings":
 					{
@@ -914,27 +1003,26 @@
 						"selection":
 						[
 							[
-								6538,
-								6538
+								987,
+								987
 							]
 						],
 						"settings":
 						{
 							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme.tmTheme",
-							"sorttabs_lastactivated": 1484068843.95,
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"word_wrap": true
+							"sorttabs_lastactivated": 1484645892.75,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2560.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "server/thermopi.js",
+					"buffer": 6,
+					"file": "API/thermopi.js",
 					"semi_transient": false,
 					"settings":
 					{
@@ -945,23 +1033,83 @@
 						"selection":
 						[
 							[
-								13119,
-								13119
+								8963,
+								8963
 							]
 						],
 						"settings":
 						{
 							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme.tmTheme",
-							"sorttabs_lastactivated": 1484033888.14,
+							"sorttabs_lastactivated": 1485530807.47,
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false,
-							"word_wrap": false
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 5850.0,
+						"translation.y": 3041.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "APP/www/js/services/Config.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 276,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								276,
+								276
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme.tmTheme",
+							"sorttabs_lastactivated": 1485537095.24,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "API/thermopi-slave.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9398,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2905,
+								2905
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme.tmTheme",
+							"sorttabs_lastactivated": 1485530801.79,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
 					"type": "text"
 				}
 			]

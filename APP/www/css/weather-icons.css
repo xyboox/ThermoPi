@@ -1836,3 +1836,6 @@
 .wi-wu-unknown:before {
   content: "\f00d";
 }
+.wi-wu-fog:before {
+  content: "\f003";
+}

@@ -1,0 +1,30 @@
+.rzslider.rz-vertical .rz-bar-wrapper {
+  padding: 0 !important;
+  left: -11px !important;
+}
+.rzslider.rz-vertical .rz-pointer {
+  left: -30px !important;
+}
+.rzslider.rz-vertical .rz-bubble {
+  left: 9px !important;
+}
+.rzslider .rz-pointer {
+  width: 40px;
+  height: 14px;
+  background-color: #FFF;
+  border-radius: 0.2rem !important;
+}
+.rzslider .rz-pointer:after {
+  width: 0 !important;
+  height: 0 !important;
+}
+.rzslider .rz-bubble {
+  color: #fff !important;
+  font-family: 'Open Sans Condensed', sans-serif !important;
+}
+.rzslider .rz-selection {
+  background: linear-gradient(45deg, #aa4636 0%, #31171e 100%) !important;
+}
+.rzslider .rz-bar {
+  background: #FFF;
+}

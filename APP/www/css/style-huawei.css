@@ -202,22 +202,22 @@ ion-tabs.tabs-color-active-positive .tab-item {
 .temperature .temp {
   color: honeydew;
   font-family: 'Days One', sans-serif;
-  font-size: 2.8rem;
+  font-size: 3.4rem;
   font-weight: 700;
   left: 0;
-  line-height: 8rem;
+  line-height: 6rem;
   position: absolute;
   text-align: center;
   text-shadow: 0 0 24px rgba(255, 255, 255, 0.6);
-  top: 104px;
+  top: 84px;
   width: 100%;
 }
 .temperature .home-holder {
+  position: absolute;
+  top: -35px;
+  left: 0;
   font-size: 20rem;
   font-weight: 100;
-  margin-left: auto;
-  margin-right: auto;
-  width: 15rem;
 }
 .temperature .home-holder i {
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
@@ -238,7 +238,7 @@ ion-tabs.tabs-color-active-positive .tab-item {
 .controls-container {
   display: inline-block;
   width: 20%;
-  height: 18rem;
+  height: 16rem;
   /*background: linear-gradient(45deg, #31171e 0%, #aa4636 100%);*/
   /*box-shadow: 0 0 10px #ccc;*/
   border-radius: 1rem;
@@ -356,7 +356,7 @@ ion-tabs.tabs-color-active-positive .tab-item {
   -webkit-animation-duration: 750ms;
 }
 .weather {
-  padding: 0.2rem 0 0;
+  padding: 0.4rem 0 0;
   background-color: transparent !important;
   text-align: center;
 }
@@ -366,9 +366,9 @@ ion-tabs.tabs-color-active-positive .tab-item {
   width: 22%;
 }
 .weather .symbol i {
-  color: #66bfff;
   font-size: 1.8rem;
-  line-height: 2.46rem;
+  /*line-height: 2.8rem;*/
+  color: #66bfff;
   vertical-align: -webkit-baseline-middle;
 }
 .weather .temp-desc {
@@ -486,13 +486,7 @@ ion-tabs.tabs-color-active-positive .tab-item {
   margin-right: 0 !important;
 }
 .timer-range .timer {
-  background: linear-gradient(45deg, #31171e 0%, #aa4636 100%);
-  border-radius: 0.4rem;
-  box-shadow: 0 0 315px lightcoral;
   font-size: 4rem;
   font-weight: 500;
-  line-height: 4.4rem;
-  min-height: 5rem;
-  padding-top: 0.3rem;
-  text-align: center;
+  padding-top: 3rem;
 }
